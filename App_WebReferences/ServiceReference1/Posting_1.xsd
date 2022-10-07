@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" elementFormDefault="qualified" targetNamespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="ChannelType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChannelName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Name of the channel Allowed Values: MB, IB, CM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ChannelReqTime" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Request Time</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ChannelTrxRef" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Unique Transaction Reference from the Channel which is used for logging/debugging</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RequestHeaderType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="UUID" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Country" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Operating Country Code in ISO2 Country Code Format (Sample Value : JO)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Channel" type="ChannelType">
+        <xsd:annotation>
+          <xsd:documentation>Information about the Channel which is invoking the service</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="ServiceCode" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="HeaderExtension" type="HeaderExtentionType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Language" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="HeaderExtentionType">
+    <xsd:annotation>
+      <xsd:documentation />
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="FieldName" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="FieldValue" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseHeaderType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" form="unqualified" name="UUID" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" form="unqualified" name="Country" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" form="unqualified" name="ChannelId" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" form="unqualified" name="ChannelTrxRef" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Unique Transaction Reference from the Channel which is used for logging/debugging</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" form="unqualified" name="ServiceCode" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" form="unqualified" name="ResponseDateTime" type="xsd:dateTime" />
+      <xsd:element minOccurs="0" maxOccurs="1" form="unqualified" name="ElapsedTimeInMilliSeonds" type="xsd:int" />
+      <xsd:element minOccurs="1" maxOccurs="1" form="unqualified" name="ResponseStatus" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" form="unqualified" name="ResponseStatusCode" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="unbounded" form="unqualified" name="ResponseMessage" type="ResponseMessageType" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="HeaderExtension" type="HeaderExtentionType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="ResponseMessageType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" form="unqualified" name="Code" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" form="unqualified" name="Description" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" form="unqualified" name="Details" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" form="unqualified" name="Severity" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" form="unqualified" name="Type" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" form="unqualified" name="Source" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AmountType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Currency" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Currency Code for the value of the money</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Amount" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation>Value of the money specified currency</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="Description" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="NoOfDecimals" type="xsd:int" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="AddressType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="AddressType" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ApartmentNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Apartment Number of the address</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="BuildingOrHouseNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Building or house number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="StreetName" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Street Name of the address</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CityOrTown" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>City or Town</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CountryCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Country Code of the address</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="NearestLandmark" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Nearest Landmark of the address</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="PostalOrZipCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Postal or ZIP Code</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="POBoxNumber" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>PO Box Number</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="StreetNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="OfficeNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CityCode" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DistrictCode" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DistrictName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ProvinceCode" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ProvinceName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="WebSiteAddress" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SocialMediaAddress" type="xsd:string" />
+      <xsd:element minOccurs="0" name="GenericAddressLines">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element maxOccurs="unbounded" name="GenericAddressLine" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CountryName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="OtherCity" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CountryNameAR" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CityName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CityNameAR" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Language" type="ReferenceDataType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="FullAddress" type="xsd:string" />
+    </xsd:sequence>
+    <xsd:attribute default="ADD" name="Operation">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="ADD" />
+          <xsd:enumeration value="UPDATE" />
+          <xsd:enumeration value="DELETE" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="ReferenceDataType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Code" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>1 - PERSONAL / 2 - OFFICIAL - NEED TO VERIFIED WITH BE TEAM</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="DataGroup" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Descriptions">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="Description" type="LocalizedStringType" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="IdentifierType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Type" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Value" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CurrencyType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="ISO3Code" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Denomination" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Description" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="LocalizedStringType">
+    <xsd:complexContent mixed="false">
+      <xsd:extension base="Maintainable">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Value" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="Language" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="CharacteristicsListType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Charasteristics" type="CharasteristicsType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CharasteristicsType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Type" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Value" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="IdentifierListType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="IdentifierType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="KeyListType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="KeyItem" type="KeyType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="KeyType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Key" type="xsd:string" />
+      <xsd:element minOccurs="1" maxOccurs="1" name="Value" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="Maintainable">
+    <xsd:sequence />
+    <xsd:attribute name="Operation" use="optional">
+      <xsd:simpleType>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="ADD" />
+          <xsd:enumeration value="UPDATE" />
+          <xsd:enumeration value="DELETE" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:attribute>
+  </xsd:complexType>
+  <xsd:complexType name="AccountInfoList">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="account" type="accountType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="accountType">
+    <xsd:sequence>
+      <xsd:element name="CIF" type="xsd:string" />
+      <xsd:element name="AlternativeCIF" type="xsd:string" />
+      <xsd:element name="AccountNumber" type="xsd:string" />
+      <xsd:element name="AlternativeAccountNumber" type="xsd:string" />
+      <xsd:element name="Status" type="xsd:string" />
+      <xsd:element name="IsAccountReopen" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SignatoryList">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="unbounded" name="signatory" type="SignatoryType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SignatoryType">
+    <xsd:sequence>
+      <xsd:element name="RelationshipId" type="xsd:string" />
+      <xsd:element name="AlternativeRelationshipId" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

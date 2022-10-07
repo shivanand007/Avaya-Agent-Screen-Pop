@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://10.1.25.157/CallBack/CallBackRequest.asmx?wsdl" docRef="http://10.1.25.157/CallBack/CallBackRequest.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://10.1.25.157/CallBack/CallBackRequest.asmx" xmlns:q1="http://APS.Avaya.com/" binding="q1:CallBackRequestSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://10.1.25.157/CallBack/CallBackRequest.asmx" xmlns:q2="http://APS.Avaya.com/" binding="q2:CallBackRequestSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:tns="http://AB/MW/ABSPARK/Common/Schemas/L2/Party" xmlns:common="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" elementFormDefault="qualified" targetNamespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Party" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation="Posting_1.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" />
+  <complexType name="BeneficialOwnerDetailType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" name="Identifier" type="common:IdentifierType" />
+          <element minOccurs="0" name="Individual" type="tns:IndividualBasicDetailType" />
+          <element minOccurs="0" name="AdditionalDetail" type="tns:IndividualAdditionalDetailType" />
+          <element minOccurs="0" name="ComplianceDetail" type="tns:IndividualComplianceDetailType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="RelationShipType" type="common:ReferenceDataType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="ReasonofBeneficialOwner" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="IsAccountBeneficialOwner" type="string" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="BusinessObjectType">
+    <annotation>
+      <documentation>User who is performing the operation - send from
+				consumer during update.
+				BE should use this to update the Tokens (not
+				the general channel name
+				for update)</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="common:Maintainable" />
+    </complexContent>
+  </complexType>
+  <complexType name="CardIdentifierType">
+    <sequence>
+      <element minOccurs="0" name="Identifier" type="common:IdentifierType" />
+    </sequence>
+  </complexType>
+  <complexType name="ChildrenDetailType">
+    <annotation>
+      <documentation>Children details will be populated from table CISCHDPF</documentation>
+    </annotation>
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" name="Id" type="string">
+            <annotation>
+              <documentation>CISCHDPF.CHI003</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="IndividualDetail" type="tns:IndividualBasicDetailType" />
+          <element minOccurs="0" name="IndividualAdditionalDetail" type="tns:IndividualAdditionalDetailType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CRSEntityRegistrationType">
+    <sequence>
+      <element minOccurs="0" name="CRSEntity" type="tns:OrganizationType" />
+      <element minOccurs="0" name="CRSEntityType" type="string" />
+      <element minOccurs="0" name="CRSEntitySubType" type="string" />
+      <element minOccurs="0" name="ComplianceLevel" type="string">
+        <annotation>
+          <documentation>FULL, PARTIAL, NONE</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="CRSRegistrationType">
+    <complexContent mixed="false">
+      <extension base="tns:RegistrationType">
+        <sequence>
+          <element minOccurs="0" name="ComplianceLevel" type="string">
+            <annotation>
+              <documentation>FULL, PARTIAL, NONE</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" maxOccurs="1" name="CRSCertifiation" type="string" />
+          <element minOccurs="0" maxOccurs="1" name="CRSCountofChange" type="string" />
+          <element minOccurs="0" maxOccurs="1" name="CertificationSigned" type="string" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CustomerIdentifierType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="common:IdentifierType" />
+    </sequence>
+  </complexType>
+  <complexType name="CustomerType">
+    <sequence>
+      <element minOccurs="0" name="CustomerId" type="tns:CustomerIdentifierType" />
+      <element minOccurs="0" name="Individual" type="tns:IndividualType" />
+      <element minOccurs="0" name="Organization" type="tns:OrganizationType" />
+    </sequence>
+  </complexType>
+  <complexType name="CustomerDetailType">
+    <complexContent mixed="false">
+      <extension base="tns:BusinessObjectType">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+          <element minOccurs="0" name="TradeFinanceFlag" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="RiskIndicator" type="common:ReferenceDataType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="ProductCode" type="tns:ProductAndProgram" />
+          <element minOccurs="0" name="RelationShipManager" type="common:IdentifierType" />
+          <element minOccurs="0" name="DataQualityFlag" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="CustomerType" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="CustomerSegment" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="PreferredLanguageCode" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="PreferredMailAddressType" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="TermsAndConditionsReferenceNumber" type="common:ReferenceDataType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="PersonalCustomerDetail" type="tns:PersonalCustomerDetailType" />
+          <element minOccurs="0" name="AccountHolder" type="string">
+            <annotation>
+              <documentation>Applicable only for Joint Customers. This flag will be set to Y when the joint customer has an account with us.</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="PrimaryBranch" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="ComplianceDetailsForhighriskParty" type="tns:IndividualComplianceDetailType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="DocumentType">
+    <sequence>
+      <element minOccurs="0" name="DocumentCategory" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="DocumentType" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="DocumentNumber" type="string" />
+      <element minOccurs="0" name="IssuanceDate" type="date" />
+      <element minOccurs="0" name="ExpiryDate" type="string" />
+      <element minOccurs="0" name="PlaceOfIssue" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="CountryOfIssue" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="EducationDetailType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" name="Level" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="Major" type="common:ReferenceDataType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="EmploymentDetailType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" name="ID" type="string" />
+          <element minOccurs="0" name="CurrentEmployment" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="Status" type="string" />
+          <element minOccurs="0" name="StartDate" type="date" />
+          <element minOccurs="0" name="EndDate" type="date" />
+          <element minOccurs="0" name="EmployerName" type="common:ReferenceDataType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="EmployerActivity" type="tns:EmployerActivityType" />
+          <element minOccurs="0" name="EmployerBusinessSector" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="Salary" type="common:AmountType" />
+          <element minOccurs="0" name="SalaryAmountCode" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="SalaryPaymentMode" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="SalaryTransferredToAccount" type="string" />
+          <element minOccurs="0" name="MonthlyIncomeCode" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="JobTitle" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="JobProfession" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="EmploymentState" type="common:ReferenceDataType">
+            <annotation>
+              <documentation>CURRENT/PREVIOUS/OLD</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="HoldUnionCard" type="string" />
+          <element minOccurs="0" name="HoldInvestorCard" type="string" />
+          <element minOccurs="0" name="SelfEmploymentLicNumber" type="string" />
+          <element minOccurs="0" name="SelfEmploymentLicExpiryDate" type="date" />
+          <element minOccurs="0" name="LengthOfEmployment" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="PreviousEmploymentDetails" type="string" />
+          <element minOccurs="0" maxOccurs="unbounded" name="OrganizationDetail" type="tns:OrganizationDetailType" />
+          <element minOccurs="0" maxOccurs="1" name="LinkWorkAddress" type="string" />
+          <element minOccurs="0" maxOccurs="1" name="WorkAddress" type="string" />
+          <element minOccurs="0" name="GrossMonthly" type="common:ReferenceDataType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="EntityToken">
+    <annotation>
+      <documentation>Each CIS/EQN Table contains the following details,
+				based on the tables used to retrieve the data, a toke for the table
+				needs to be send to Middleware,
+				during the update call, the consumer
+				will send the token back to BackEnd,
+				Back End has to verify whether
+				the token is modified for the
+				particular table, if the token is
+				modified, it should return an
+				error message stating the data is out
+				dated.
+				Now the consumer needs to make a new call to retrieve the new
+				data and
+				then update it back. This
+				orchestration should happen at the
+				consumer level (not at MW).
+
+				ENTRY USER
+				LAST MDF USER
+				OVERRIDE
+				USER-ENTRY
+				OVERRIDE USER-MODIFY
+				ENTRY DATE
+				LASR MDF DATE</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" name="EntityName" type="string" />
+      <element minOccurs="0" name="Token" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="FATCADetailType">
+    <sequence>
+      <element minOccurs="0" name="USGreenCardHolder" type="string" />
+      <element minOccurs="0" name="USResident" type="string" />
+      <element minOccurs="0" name="USTaxPayer" type="string" />
+      <element minOccurs="0" maxOccurs="unbounded" name="SignedW8FormAvailable" type="tns:SignedW8FormAvailableType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="SignedW9FormAvailable" type="tns:SignedW9FormAvailableType" />
+      <element minOccurs="0" name="SignedSecrecyFormAvailable" type="string" />
+      <element minOccurs="0" name="SecrecySignedFormDate" type="date" />
+      <element minOccurs="0" name="TAXIdentificationNumber" type="string" />
+      <element minOccurs="0" name="USCitizen" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="IsPEP" type="string" />
+      <element minOccurs="0" name="DateOfFillingFATCA" type="date" />
+      <element minOccurs="0" maxOccurs="1" name="Classification" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="GRC" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="GuardianDetailType">
+    <sequence>
+      <element minOccurs="0" name="CustomerIdentifier" type="common:IdentifierType" />
+      <element minOccurs="0" name="Individual" type="tns:IndividualBasicDetailType" />
+      <element minOccurs="0" name="AdditionalDetail" type="tns:IndividualAdditionalDetailType" />
+      <element minOccurs="0" name="ComplianceDetail" type="tns:IndividualComplianceDetailType" />
+      <element minOccurs="0" name="RelationShipType" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="LegalStatus" type="common:ReferenceDataType" />
+    </sequence>
+    <attribute name="Operation" type="string" use="optional" />
+  </complexType>
+  <complexType name="IncomeType">
+    <sequence>
+      <element minOccurs="0" name="Amount" type="common:AmountType" />
+      <element minOccurs="0" name="Source" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="IndividualAdditionalDetailType">
+    <sequence>
+      <element minOccurs="0" name="LegalCompetencyDetail" type="tns:LegalCompetencyDetailType" />
+      <element minOccurs="0" name="NumberOfDependents" type="int" />
+      <element minOccurs="0" name="Preference" type="tns:IndividualPreferenceType" />
+      <element minOccurs="0" name="SourceOfIncome" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="OtherIncome" type="tns:IncomeType" />
+      <element minOccurs="0" name="YearlyTransactionAmount" type="common:AmountType" />
+      <element minOccurs="0" name="FirstDeposit" type="common:AmountType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="NationalityDetail" type="tns:NationalityDetailType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="Education" type="tns:EducationDetailType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="ResidencyDetail" type="tns:ResidencyDetailType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="EmploymentDetail" type="tns:EmploymentDetailType" />
+      <element minOccurs="0" maxOccurs="1" name="CRSDetail" type="tns:CRSDetailType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="CRSTaxDetail" type="tns:CRSTaxDetailType" />
+    </sequence>
+  </complexType>
+  <complexType name="IndividualBasicDetailType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="PartyIdentifier" type="common:IdentifierType">
+        <annotation>
+          <documentation>Code = NATIONAL_NO, Value : CISCHDPF-CHI007
+						(Children National Number).</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="unbounded" name="Name" type="tns:IndividualDetailNameType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="Address" type="common:AddressType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TelephoneNumber" type="tns:TelephoneDetailNumberType" />
+      <element minOccurs="0" name="DateOfBirth" type="date" />
+      <element minOccurs="0" name="DeceasedDate" type="date">
+        <annotation>
+          <documentation>CIS024PF.C24003</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="CountryOfBirth" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="CityOfBirth" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="Religion" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="Gender" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CISCHDPF.CHI006 (For Individual/Children)</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="Salutation" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>Should be MR, MRS, DR, PROF etc.... Translation
+						should be done @ MW Layer</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="unbounded" name="MotherName" type="common:LocalizedStringType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="MotherMaidenName" type="common:LocalizedStringType" />
+      <element minOccurs="0" maxOccurs="1" name="SMSMobileNumber" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="LastReviewDate" type="date" />
+      <element minOccurs="0" maxOccurs="1" name="NextReviewDate" type="date" />
+      <element minOccurs="0" maxOccurs="1" name="SundryAnalysisCode" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="AnalysisCode" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="FrequencyRating" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="IndividualComplianceDetailType">
+    <sequence>
+      <element minOccurs="0" name="FATCADetail" type="tns:FATCADetailType" />
+      <element minOccurs="0" name="AMLComplianceLevel" type="tns:RiskDetail" />
+    </sequence>
+  </complexType>
+  <complexType name="IndividualDueDeligenceType">
+    <sequence>
+      <element minOccurs="0" name="BusinessActivity" type="common:ReferenceDataType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="SourceOfWealth" type="tns:SourceOfWealthType" />
+      <element minOccurs="0" name="ExpectedTransactionsAmount" type="common:AmountType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="ExpectedTransactionsNature" type="tns:ExpectedTransactionsNatureType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="ExpectedCountriesToReceiveTransfersFrom" type="tns:ExpectedCountriesToReceiveTransfersFromType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="ExpectedCountriesToSendTransfersTo" type="tns:ExpectedCountriesToSendTransfersToType" />
+      <element minOccurs="0" name="Relationship" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="ExpectedTransactionCash" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="IndividualNameType">
+    <sequence>
+      <element minOccurs="0" name="Language" type="string">
+        <annotation>
+          <documentation>Valid Values: EN, AR, FR</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="FirstName" type="string" />
+      <element minOccurs="0" name="MiddleName" type="string" />
+      <element minOccurs="0" name="LastName" type="string" />
+      <element minOccurs="0" name="ThirdName" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="IndividualDetailNameType">
+    <annotation>
+      <documentation>Individual can have more than one names - each name is
+				differentiated by NameType
+				For each name type names can be in English
+				/ Arabic - which are
+				represented using language code</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" name="NameType" type="string">
+        <annotation>
+          <documentation>Name Type one of PRIMARY/ SECOND_NATIONALITY</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="FirstName" type="string" />
+      <element minOccurs="0" name="FatherName" type="string" />
+      <element minOccurs="0" name="GrandFatherName" type="string" />
+      <element minOccurs="0" name="FamilyName" type="string" />
+      <element minOccurs="0" name="FullName" type="string">
+        <annotation>
+          <documentation>When NameType=SECOND_NATIONALITY THEN
+						CIS024PF-C24008 AND LanguageCode=EN
+						When
+						NameType=SECOND_NATIONALITY THEN CIS024PF C24007 WITH
+						LanguageCode=AR
+
+						CISCHDPF.CHI003 (AR)/CISCHDPF.CHI003 (EN) for
+						Dependent Childrens</documentation>
+        </annotation>
+      </element>
+      <element name="LanguageCode" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="IndividualOtherDetailType">
+    <sequence>
+      <element minOccurs="0" name="MarketingPreferenceDetail" type="tns:MarketingPreferenceDetailType" />
+      <element minOccurs="0" name="EnhancedDueDiligence" type="tns:IndividualDueDeligenceType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="OtherBankingRelationShipDetail" type="tns:OtherBankRelationShipDetailType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="NRADetail" type="tns:NRADetailType" />
+    </sequence>
+  </complexType>
+  <complexType name="IndividualPreferenceType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="VehiclePreference" type="tns:VehiclePreferenceType" />
+      <element minOccurs="0" name="ClubMembership" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="Hobby" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="FavoriteColor" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="FrequentTraveller" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="CarOwnership" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="HouseOwnership" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="DealWithOtherBank" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="IndividualRelationShipDetailType">
+    <sequence>
+      <element minOccurs="0" name="GuardianDetail" type="tns:GuardianDetailType" />
+      <element minOccurs="0" name="BeneficialOwnerDetail" type="tns:BeneficialOwnerDetailType" />
+      <element minOccurs="0" name="SpouseDetail" type="tns:IndividualBasicDetailType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="ChildrenDetail" type="tns:ChildrenDetailType" />
+      <element minOccurs="0" name="RelManagmentDetails" type="tns:RelManagmentDetails" />
+      <element minOccurs="0" maxOccurs="unbounded" name="POADetail" type="tns:PowerOfAttorneyDetailType" />
+    </sequence>
+  </complexType>
+  <complexType name="RelManagmentDetails">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="HoldSignific" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="CommonInterest" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="BoardHoldSignific" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="KeyHoldSignific" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ControlOverBank" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="KeyControlOverBank" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="BoardControlledBY" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="KeyControlledBY" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="LegalTaxFinInv" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ExternalAuditor" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="FirstDegreeAuditor" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="SecondHoldSignific" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="MemOfBoardAndKey" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="IndividualType">
+    <sequence>
+      <element minOccurs="0" name="DateOfBirth" type="date" />
+      <element minOccurs="0" name="CityOfBirth" type="string" />
+      <element minOccurs="0" name="CountryOfBirth" type="string" />
+      <element minOccurs="0" maxOccurs="unbounded" name="PrimaryName" type="tns:IndividualNameType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="SecondaryName" type="tns:IndividualNameType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="Address" type="common:AddressType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TaxRegistration" type="tns:TaxRegistrationDetailType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TelephoneNumber" type="tns:TelephoneNumberType" />
+    </sequence>
+  </complexType>
+  <complexType name="JointCustomerDetailType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="tns:JointCustomerIdentifier" />
+      <element minOccurs="0" name="Address" type="common:AddressType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="PowerOfAttorney" type="tns:PowerOfAttorneyDetailType" />
+      <element minOccurs="0" name="DataQualityFlag" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="Name" type="tns:IndividualDetailNameType" />
+      <element minOccurs="0" name="PreferredLanguageCode" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="Products">
+        <complexType>
+          <sequence>
+            <element minOccurs="0" maxOccurs="unbounded" name="Product" type="tns:ProductAndProgram" />
+          </sequence>
+        </complexType>
+      </element>
+      <element minOccurs="0" name="TermsAndConditionsReferenceNumber" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="CustomerType" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="Relationship" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="JointCustomerIdentifier">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" name="Identifier" type="common:IdentifierType" />
+      <element minOccurs="0" name="RoleType" type="common:ReferenceDataType" />
+      <element minOccurs="0" maxOccurs="1" name="DataQualityFlag" type="common:ReferenceDataType" />
+      <element minOccurs="0" maxOccurs="1" name="Name" type="tns:IndividualDetailNameType" />
+      <element minOccurs="0" maxOccurs="1" name="DateOfBirth" type="date" />
+    </sequence>
+  </complexType>
+  <complexType name="LegalCompetencyDetailType">
+    <sequence>
+      <element minOccurs="0" name="Handicapped" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="Incompetent" type="string" />
+      <element minOccurs="0" name="MaritalStatus" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="EmploymentStatus" type="string" />
+      <element minOccurs="0" name="ResidenceIndicator" type="common:ReferenceDataType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="PEPDetail" type="tns:PEPDetail" />
+    </sequence>
+  </complexType>
+  <complexType name="MaintainCustomerDetailRequestType">
+    <sequence>
+      <element minOccurs="0" name="CustomerDetail" type="tns:CustomerDetailType" />
+      <element minOccurs="0" maxOccurs="1" name="JointCustomerDetail" type="tns:JointCustomerDetailType" />
+      <element minOccurs="0" maxOccurs="1" name="Security" type="tns:SecurityType" />
+    </sequence>
+  </complexType>
+  <complexType name="MaintainCustomerDetailResponseType">
+    <complexContent mixed="false">
+      <extension base="common:ResponseHeaderType" />
+    </complexContent>
+  </complexType>
+  <complexType name="MarketingPreferenceDetailType">
+    <sequence>
+      <element minOccurs="0" name="IntroducedBy" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="IntroducedByAccount" type="common:IdentifierType" />
+      <element minOccurs="0" name="IntroducerRelationshipWithCustomer" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="BestTimeForContact" type="common:ReferenceDataType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="ReasonForBankingWithUs" type="tns:ReasonForBankingWithUsType" />
+      <element minOccurs="0" name="DateOfJoining" type="date" />
+    </sequence>
+  </complexType>
+  <complexType name="NationalityDetailType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" name="ID" type="string" />
+          <element minOccurs="0" name="Type" type="string" />
+          <element minOccurs="0" maxOccurs="unbounded" name="Document" type="tns:DocumentType" />
+          <element minOccurs="0" name="Number" type="string" />
+          <element minOccurs="0" name="Country" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="DateOfBirth" type="date" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="NRADetailType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+          <element minOccurs="0" name="Country" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="AccountNumber" type="string" />
+          <element minOccurs="0" name="OfficerCode" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="OfficerDetail" type="common:ReferenceDataType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="ProgramCode" type="common:ReferenceDataType" />
+          <element minOccurs="0" maxOccurs="1" name="HomeCountryRM" type="string" />
+          <element minOccurs="0" maxOccurs="1" name="Verified" type="string" />
+          <element minOccurs="0" maxOccurs="1" name="Financial" type="string" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="OrganizationType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="TaxRegistration" type="tns:TaxRegistrationDetailType" />
+      <element minOccurs="0" name="FullName" type="string" />
+      <element minOccurs="0" name="Identifier" type="common:IdentifierType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="Address" type="common:AddressType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="TelephoneNumber" type="tns:TelephoneNumberType" />
+    </sequence>
+  </complexType>
+  <complexType name="OrganizationDetailType">
+    <sequence>
+      <element minOccurs="0" name="UniqueIdentifier" type="common:IdentifierType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="AlternativeIdentifier" type="common:IdentifierType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="Address" type="common:AddressType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="Telephone" type="tns:TelephoneDetailNumberType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="Descriptions" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="OtherBankRelationShipDetailType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+          <element minOccurs="0" name="AccountNumber" type="string">
+            <annotation>
+              <documentation>CIS010PF.CRB007</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="BankCode" type="common:ReferenceDataType">
+            <annotation>
+              <documentation>CIS010PF.CRB002</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="DealNature" type="common:ReferenceDataType">
+            <annotation>
+              <documentation>CIS010PF.CRB003</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="Country" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="CardNumber" type="string">
+            <annotation>
+              <documentation>CIS010PF.CRB005</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="Name" type="common:ReferenceDataType">
+            <annotation>
+              <documentation>CIS010PF-CRB008</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="Address" type="common:ReferenceDataType">
+            <annotation>
+              <documentation>CIS010PF-CRB009</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" maxOccurs="unbounded" name="ProgramCode" type="common:ReferenceDataType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="LoanType" type="common:ReferenceDataType">
+            <annotation>
+              <documentation>CIS010PF-CRB010/11/12/19 - Use Code and Description (Code: 1-4 and Description - Actual Value from BE)</documentation>
+            </annotation>
+          </element>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="PEPDetail">
+    <sequence>
+      <element minOccurs="0" name="PEPSequence" type="int" />
+      <element minOccurs="0" maxOccurs="unbounded" name="FullName" type="common:LocalizedStringType" />
+      <element minOccurs="0" name="Relationship" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="PoliticalPosition" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="Nationality" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="SourceOfFund" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="PersonalCustomerDetailType">
+    <sequence>
+      <element minOccurs="0" name="IndividualBasicDetail" type="tns:IndividualBasicDetailType" />
+      <element minOccurs="0" name="IndividualAdditionalDetail" type="tns:IndividualAdditionalDetailType" />
+      <element minOccurs="0" name="IndividualRelationShipDetail" type="tns:IndividualRelationShipDetailType" />
+      <element minOccurs="0" name="IndividualOtherDetail" type="tns:IndividualOtherDetailType" />
+      <element minOccurs="0" name="IndividualComplianceDetail" type="tns:IndividualComplianceDetailType" />
+      <element minOccurs="0" name="RiskAssementDetail" type="tns:RiskAssessmentDetailType" />
+    </sequence>
+  </complexType>
+  <complexType name="PowerOfAttorneyDetailType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" name="Id" type="string" />
+          <element minOccurs="0" name="POAType" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="POADate" type="date" />
+          <element minOccurs="0" name="POAExpiryDate" type="date" />
+          <element minOccurs="0" name="POAReferenceNumber" type="string" />
+          <element minOccurs="0" name="OrganizedBy" type="common:ReferenceDataType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="Reason" type="tns:ReasonType" />
+          <element minOccurs="0" name="BasicDetail" type="tns:IndividualBasicDetailType" />
+          <element minOccurs="0" name="AdditionalDetail" type="tns:IndividualAdditionalDetailType" />
+          <element minOccurs="0" name="ComplianceDetail" type="tns:IndividualComplianceDetailType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="RelationShipType" type="common:ReferenceDataType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ProductAndProgram">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+          <element minOccurs="0" name="ProductCode" type="common:ReferenceDataType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="SubscribedServices" type="common:ReferenceDataType" />
+          <element minOccurs="0" maxOccurs="unbounded" name="ServiceCode" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="RMDetail" type="common:IdentifierType" />
+          <element minOccurs="0" maxOccurs="1" name="Status" type="common:ReferenceDataType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RegistrationType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" name="RegistrationType" type="string">
+            <annotation>
+              <documentation>This will hard coded by the consumer - the values
+								is
+								CRS</documentation>
+            </annotation>
+          </element>
+          <element minOccurs="0" name="RegistrationDate" type="date" />
+          <element minOccurs="0" name="ExpiryDate" type="date">
+            <annotation>
+              <documentation />
+            </annotation>
+          </element>
+          <element minOccurs="0" name="DateSigned" type="date" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="ResidencyDetailType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" name="ID" type="string" />
+          <element minOccurs="0" name="Number" type="string" />
+          <element minOccurs="0" name="IssuanceDate" type="date" />
+          <element minOccurs="0" name="ExpiryDate" type="date" />
+          <element minOccurs="0" name="Country" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="Indicator" type="common:ReferenceDataType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="RetreiveCustomerDetailResponseType">
+    <sequence>
+      <element minOccurs="0" name="Customers">
+        <complexType>
+          <sequence>
+            <element maxOccurs="unbounded" name="CustomerDetail" type="tns:CustomerDetailType" />
+          </sequence>
+        </complexType>
+      </element>
+      <element minOccurs="0" name="JointCustomerDetail" type="tns:JointCustomerDetailType">
+        <annotation>
+          <documentation>Y/N</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" maxOccurs="1" name="Security" type="tns:SecurityType" />
+    </sequence>
+  </complexType>
+  <element name="RetrieveCustomerDetailRequest" type="tns:RetrieveCustomerDetailRequestType" />
+  <complexType name="RetrieveCustomerDetailRequestType">
+    <sequence>
+      <element minOccurs="1" maxOccurs="unbounded" name="CustomerIdentifier" type="common:IdentifierType" />
+    </sequence>
+  </complexType>
+  <element name="RetrieveCustomerDetailResponse" type="tns:RetreiveCustomerDetailResponseType" />
+  <complexType name="RiskAssessmentDetailType">
+    <annotation>
+      <documentation>CIS011PF CRR002</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" name="MoodysRating" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR005</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="SAndPRating" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR006</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="Classification" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="ABCurrentRating" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR003</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ABPreviousRating" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR004</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="RiskCountryCode" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR011</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ExternalRating" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR009</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ExternalRatingFlag" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR007</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ExternalRatingAgency" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR008</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="GurantorIndicator" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR012</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="LoanType" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR015</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="CreditCustomerIndicator" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR014</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="ReturnedChequeIndicator" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR016</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="GuaranteedValue" type="common:ReferenceDataType">
+        <annotation>
+          <documentation>CIS011PF CRR013</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="RiskDetail">
+    <sequence>
+      <element minOccurs="0" name="Rating" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="LastAssessmentDate" type="date" />
+      <element minOccurs="0" name="NextAssessmentDate" type="date" />
+    </sequence>
+  </complexType>
+  <complexType name="TaxRegistrationDetailType">
+    <annotation>
+      <documentation>T</documentation>
+    </annotation>
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="SequenceNumber" type="string" />
+      <element minOccurs="0" name="CountryCode" type="common:ReferenceDataType" />
+      <element minOccurs="0" name="TaxIdentificationNumber" type="string" />
+      <element minOccurs="0" name="TINAvailable" type="string">
+        <annotation>
+          <documentation>Maximum allowed is 30 Characters</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="TINMissingReason" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="TelephoneNumberType">
+    <sequence>
+      <element minOccurs="0" name="Usage" type="string" />
+      <element minOccurs="0" name="Type" type="string" />
+      <element minOccurs="0" name="FullNumber" type="string" />
+      <element minOccurs="0" name="CountryCode" type="string" />
+      <element minOccurs="0" name="TelephoneNumber" type="string" />
+      <element minOccurs="0" name="Extension" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="TelephoneDetailNumberType">
+    <sequence>
+      <element minOccurs="0" name="ID" type="string" />
+      <element minOccurs="0" name="TelephoneType" type="string" />
+      <element minOccurs="0" name="NumberType" type="string">
+        <annotation>
+          <documentation>LANDLINE/FAX/MOBILE/SMS_MOBILE etc....</documentation>
+        </annotation>
+      </element>
+      <element minOccurs="0" name="RegionCode" type="common:ReferenceDataType" />
+      <element minOccurs="0" maxOccurs="unbounded" name="FullNumber" type="tns:FullNumber" />
+      <element minOccurs="0" name="PreferredLanguageCode" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="VehiclePreferenceType">
+    <sequence>
+      <element minOccurs="0" name="Type" type="string" />
+      <element minOccurs="0" name="Brand" type="string" />
+      <element minOccurs="0" name="OwnedBy" type="string">
+        <annotation>
+          <documentation>SELF/WIFE</documentation>
+        </annotation>
+      </element>
+    </sequence>
+  </complexType>
+  <complexType name="CustPropertyIdentifierType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="common:IdentifierType" />
+    </sequence>
+  </complexType>
+  <complexType name="FullNumber">
+    <sequence>
+      <element minOccurs="0" name="CountryCode" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="FullPhoneNumber" type="string" />
+      <element minOccurs="1" maxOccurs="1" name="MediumType" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="SignedW8FormAvailable" />
+  <complexType name="SignedW8FormAvailableType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="SignedW8FormAvailableDetails" type="common:IdentifierType" />
+    </sequence>
+  </complexType>
+  <complexType name="SignedW9FormAvailableType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="SignedW9FormAvailableDetails" type="common:IdentifierType" />
+    </sequence>
+  </complexType>
+  <complexType name="ReasonType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ReasonDetails" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="ReasonForBankingWithUsType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ReasonForBankingWithUsDetails" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="SourceOfWealthType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="SourceOfWealthDetail" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="ExpectedTransactionsNatureType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ExpectedTransCount" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ExpectedTransactionsNatureDetail" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="ExpectedCountriesToReceiveTransfersFromType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ExpectedCountriesToReceiveTransfersFromDetail" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="ExpectedCountriesToSendTransfersToType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="ExpectedCountriesToSendTransfersToDetail" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="RelationshipType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="RelationshipDetail" type="string" />
+    </sequence>
+  </complexType>
+  <complexType name="EmployerActivityType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="EmployerActivityDetail" type="common:ReferenceDataType" />
+    </sequence>
+  </complexType>
+  <complexType name="SecurityType">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="UpdatedBy" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="AuthorizedBy" type="string" />
+      <element minOccurs="0" maxOccurs="1" name="LastModifiedDate" type="date" />
+    </sequence>
+  </complexType>
+  <complexType name="CRSTaxDetailType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" maxOccurs="1" name="ID" type="string" />
+          <element minOccurs="0" name="CountryOfTaxResidence" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="TaxTIN" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="TINNumber" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="ReasonForNotFillTIN" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="ExplanationReasonB" type="common:ReferenceDataType" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+  <complexType name="CRSDetailType">
+    <complexContent mixed="false">
+      <extension base="common:Maintainable">
+        <sequence>
+          <element minOccurs="0" name="DateSigned" type="date" />
+          <element minOccurs="0" name="Name" type="tns:IndividualNameType" />
+          <element minOccurs="0" name="DateOfBirth" type="date" />
+          <element minOccurs="0" name="CountryOfBirth" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="CityOfBirth" type="common:ReferenceDataType" />
+          <element minOccurs="0" name="Address" type="common:AddressType" />
+          <element minOccurs="0" name="Flag" type="string" />
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+</schema>

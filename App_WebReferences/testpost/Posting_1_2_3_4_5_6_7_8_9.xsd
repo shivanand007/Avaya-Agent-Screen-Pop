@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:Q1="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" xmlns:ns="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" targetNamespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="Posting_1.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" />
+  <xsd:element name="CustomerBasicDetailsMaintainRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:RequestHeaderType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="CustomerBasicDetailsMaintain" type="ns:CustomerBasicDetailsMaintainReqType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="CustomerBasicDetailsMaintainResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:ResponseHeaderType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="CustomerBasicDetailsMaintainReqType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="WorkstationId" type="xsd:string" />
+      <xsd:element minOccurs="0" name="UserId" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AccountBranch" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AccountBasic" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CustomerMnemonic" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CustomerLocation" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CustomerFullName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CustomerBasicNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DefaultAccountShortName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CustomerType" type="xsd:string" />
+      <xsd:element minOccurs="0" name="BlockedForDealInput" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Closed" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DeceasedOrInLiquidation" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Inactive" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SundryAnalysisCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ResponsibilityCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CustomerReference" type="xsd:string" />
+      <xsd:element minOccurs="0" name="SundryReferenceCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ParentCountry" type="xsd:string" />
+      <xsd:element minOccurs="0" name="RiskCountry" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ResidenceCountry" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DateCustFirstPutOnTheDatabase" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DateCustomerClosed" type="xsd:string" />
+      <xsd:element minOccurs="0" name="GroupName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="BranchMnemonic" type="xsd:string" />
+      <xsd:element minOccurs="0" name="LanguageCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TaxCode1" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TaxCode2" type="xsd:string" />
+      <xsd:element minOccurs="0" name="UpdateAllAccounts" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CustInterestRateAdjustment" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="PrincipalExchangeRateCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ChargeExchangeRateCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DownloadToFrontOffice" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ArabicCustomerFullName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ArabicAccountShortName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InternalRiskCountry" type="xsd:string" />
+      <xsd:element minOccurs="0" name="PrincipalGroup" type="xsd:string" />
+      <xsd:element minOccurs="0" name="MailToBranch" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ExemptFromTfTaxes" type="xsd:string" />
+      <xsd:element minOccurs="0" name="FontisCustomer" type="xsd:string" />
+      <xsd:element minOccurs="0" name="FontisDownloadFrequency" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="FrontOfficeName" type="xsd:string" />
+      <xsd:element minOccurs="0" name="FrontOfficeLocation" type="xsd:string" />
+      <xsd:element minOccurs="0" name="LoanOriginRef" type="xsd:string" />
+      <xsd:element minOccurs="0" name="OpicsAccountingType" type="xsd:string" />
+      <xsd:element minOccurs="0" name="OpicsCustomerClassification" type="xsd:string" />
+      <xsd:element minOccurs="0" name="HoldDirectDebit" type="xsd:string" />
+      <xsd:element minOccurs="0" name="HoldDirectDebitExpiryDate" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReasonForDirectDebitHold" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TradeFinance" type="xsd:string" />
+      <xsd:element minOccurs="0" name="RetailBranch" type="xsd:string" />
+      <xsd:element minOccurs="0" name="MarketRisk" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Opics" type="xsd:string" />
+      <xsd:element name="Internet" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReserveInterface1" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReserveInterface2" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReserveInterface3" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReserveInterface4" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ConsolidatedStmt" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ConsolidatedStmtFreqCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ForceCycleStatement" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CopyStatementSpecialAddress" type="xsd:string" />
+      <xsd:element minOccurs="0" name="PreviousStatementDate" type="xsd:string" />
+      <xsd:element minOccurs="0" name="NextStatementDate" type="xsd:string" />
+      <xsd:element minOccurs="0" name="OpicsCustomerMnemonic" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ClsEligibleFromDate" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ClsEligibleToDate" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ClsDateTradeOrValue" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ClsType" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DaysToRetryQueuedTrans" type="xsd:string" />
+      <xsd:element minOccurs="0" name="MonthsToRetryQdTrans" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CaseStatus" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

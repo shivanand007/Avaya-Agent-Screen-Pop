@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:Q2="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:Request="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/PostPreApprovedAuthorizationReference.xsd" xmlns:Account="http://AB/MW/ABSPARK/Common/Schemas/L2/Accounts" xmlns:Q1="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" xmlns:Party="http://AB/MW/ABSPARK/Common/Schemas/L2/Party" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" targetNamespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="Posting_1.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" />
+  <xsd:import schemaLocation="Posting_1_2.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Accounts" />
+  <xsd:import schemaLocation="Posting_1_2_3.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Party" />
+  <xsd:element ibmSchExtn:docRoot="true" name="PostPreApprovedAuthorizationReferenceRequest" type="Q2:PostPreApprovedAuthorizationReferenceRequestType" />
+  <xsd:complexType name="PostPreApprovedAuthorizationReferenceRequestType">
+    <xsd:sequence>
+      <xsd:element name="Header" type="Q1:RequestHeaderType" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="RequestDetails" type="Q2:RequestDetailsType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element ibmSchExtn:docRoot="true" name="PostPreApprovedAuthorizationReferenceResponse" type="Q2:PostPreApprovedAuthorizationReferenceResponseType" />
+  <xsd:complexType name="PostPreApprovedAuthorizationReferenceResponseType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Header" type="Q1:ResponseHeaderType" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RequestDetailsType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="AlternateIdentifier" type="Q1:IdentifierType">
+        <xsd:annotation>
+          <xsd:documentation>Should be used for IBAN / SWIFT etc....</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="AccountIdentifier" type="Account:AccountIdentifierType" />
+      <xsd:element name="ReferenceNo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CustomerName" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CustomerIdentifierType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="Identifier" type="Q1:IdentifierType" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

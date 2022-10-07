@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:Q1="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" xmlns:ns="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" targetNamespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="Posting_1.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" />
+  <xsd:element name="CustomerAdditionalInformationMaintainRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:RequestHeaderType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="CustomerAdditionalInformationMaintain" type="ns:CustomerAdditionalInformationMaintainReqType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="CustomerAdditionalInformationMaintainResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:ResponseHeaderType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="CustomerAdditionalInformationMaintainReqType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="CustomerMnemonic" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Location" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ThwaiSelaFlag" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ThwaiSelaJOB" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ThwaiSelaReason " type="xsd:string" />
+      <xsd:element minOccurs="0" name="ThwaiSelaName1" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ThwaiSelaName2" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

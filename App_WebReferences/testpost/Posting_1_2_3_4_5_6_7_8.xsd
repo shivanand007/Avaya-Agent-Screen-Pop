@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:Q1="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" xmlns:Q2="http://AB/MW/ABSPARK/Common/Schemas/L2/Party" xmlns:ns="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" targetNamespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="Posting_1.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" />
+  <xsd:import schemaLocation="Posting_1_2_3.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Party" />
+  <xsd:element ibmSchExtn:docRoot="true" name="MaintainCustomerDueDeligenceRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:RequestHeaderType" />
+        <xsd:element minOccurs="0" maxOccurs="unbounded" name="MaintainCustomerDueDeligenceDetail" type="ns:CustomerDueDeligenceDetailType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element ibmSchExtn:docRoot="true" name="MaintainCustomerDueDeligenceResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:ResponseHeaderType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="CustomerDueDeligenceDetailType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="Customer" type="Q2:CustomerType">
+        <xsd:annotation>
+          <xsd:documentation>Either Individual / Organization should be present.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CRSRegistrationDetail" type="Q2:CRSRegistrationType">
+        <xsd:annotation>
+          <xsd:documentation>Registration Detail is mandatory for CRS Registration Request</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" maxOccurs="1" name="CRSControllingPersonInfoDetail" type="Q2:CRSRegistrationType" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

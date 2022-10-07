@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://APS.Avaya.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://APS.Avaya.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://APS.Avaya.com/">
+      <s:element name="CallBackCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CallBackCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackListByPhoneNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackListByPhoneNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallBackListByPhoneNumberResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CallBackList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallBackListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackRemoveById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ContactId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackRemoveByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallBackRemoveByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackRemoveByPhoneNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackRemoveByPhoneNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CallBackRemoveByPhoneNumberResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInstallationId">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInstallationIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInstallationIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBack">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="initialskillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="outboundSkillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CallbackDateTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="agentLoginId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ContactPriority" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallBackResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListOfAACCTimeZones">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListOfAACCTimeZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListOfAACCTimeZonesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSkillsetID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SkillsetName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSkillsetIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSkillsetIDResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateRandomPercentage">
+        <s:complexType />
+      </s:element>
+      <s:element name="GenerateRandomPercentageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GenerateRandomPercentageResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAACCServerTimeDifference">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAACCServerTimeDifferenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAACCServerTimeDifferenceResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConfiguration">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetConfigurationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetConfigurationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutboundResults">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="campaign_name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOutboundResultsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOutboundResultsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsageStatistics">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUsageStatisticsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsageStatisticsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClearStatistics">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearStatisticsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CallBackOutboundNow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="skillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="outboundSkillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="preferredagentid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="specificcampaignname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="priority" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundNowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallBackOutboundNowResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="skillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="outboundSkillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="specificCampaign" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CallBackOutboundCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundScheduledCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="skillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="outboundSkillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CallbackTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundScheduledCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CallBackOutboundScheduledCountResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundScheduledList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="skillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="outboundSkillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CallbackTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="preferredagentid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundScheduledListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallBackOutboundScheduledListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="skillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="outboundSkillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="preferredagentid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="specificCampaign" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CallBackOutboundListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundRemove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CLID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="number" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="skillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="outboundSkillset" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reason" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CallBackOutboundRemoveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CallBackOutboundRemoveResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CallBackCountSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackCount" />
+  </wsdl:message>
+  <wsdl:message name="CallBackCountSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackListByPhoneNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackListByPhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="CallBackListByPhoneNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackListByPhoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackListSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackList" />
+  </wsdl:message>
+  <wsdl:message name="CallBackListSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackRemoveByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackRemoveById" />
+  </wsdl:message>
+  <wsdl:message name="CallBackRemoveByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackRemoveByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackRemoveByPhoneNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackRemoveByPhoneNumber" />
+  </wsdl:message>
+  <wsdl:message name="CallBackRemoveByPhoneNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackRemoveByPhoneNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInstallationIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInstallationId" />
+  </wsdl:message>
+  <wsdl:message name="GetInstallationIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInstallationIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBack" />
+  </wsdl:message>
+  <wsdl:message name="CallBackSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfAACCTimeZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListOfAACCTimeZones" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfAACCTimeZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListOfAACCTimeZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSkillsetIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSkillsetID" />
+  </wsdl:message>
+  <wsdl:message name="GetSkillsetIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSkillsetIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateRandomPercentageSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateRandomPercentage" />
+  </wsdl:message>
+  <wsdl:message name="GenerateRandomPercentageSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateRandomPercentageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAACCServerTimeDifferenceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAACCServerTimeDifference" />
+  </wsdl:message>
+  <wsdl:message name="GetAACCServerTimeDifferenceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAACCServerTimeDifferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="GetConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOutboundResultsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOutboundResults" />
+  </wsdl:message>
+  <wsdl:message name="GetOutboundResultsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOutboundResultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsageStatisticsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsageStatistics" />
+  </wsdl:message>
+  <wsdl:message name="GetUsageStatisticsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsageStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearStatisticsSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearStatistics" />
+  </wsdl:message>
+  <wsdl:message name="ClearStatisticsSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundNowSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundNow" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundNowSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundNowResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundCountSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundCount" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundCountSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundScheduledCountSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundScheduledCount" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundScheduledCountSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundScheduledCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundScheduledListSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundScheduledList" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundScheduledListSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundScheduledListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundListSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundList" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundListSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundRemoveSoapIn">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundRemove" />
+  </wsdl:message>
+  <wsdl:message name="CallBackOutboundRemoveSoapOut">
+    <wsdl:part name="parameters" element="tns:CallBackOutboundRemoveResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CallBackRequestSoap">
+    <wsdl:operation name="CallBackCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Count call-backs using the internal AACC engine filtered by phone number</wsdl:documentation>
+      <wsdl:input message="tns:CallBackCountSoapIn" />
+      <wsdl:output message="tns:CallBackCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackListByPhoneNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List call-backs using the internal AACC engine filtered by the phone number where the customer would like to be called back to with wildcards % or *</wsdl:documentation>
+      <wsdl:input message="tns:CallBackListByPhoneNumberSoapIn" />
+      <wsdl:output message="tns:CallBackListByPhoneNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">List call-backs using the internal AACC engine filtered by phone number</wsdl:documentation>
+      <wsdl:input message="tns:CallBackListSoapIn" />
+      <wsdl:output message="tns:CallBackListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackRemoveById">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cancel a single call-back request using the internal AACC engine</wsdl:documentation>
+      <wsdl:input message="tns:CallBackRemoveByIdSoapIn" />
+      <wsdl:output message="tns:CallBackRemoveByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackRemoveByPhoneNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Cancel a call-back using the internal AACC engine filtering by phone number</wsdl:documentation>
+      <wsdl:input message="tns:CallBackRemoveByPhoneNumberSoapIn" />
+      <wsdl:output message="tns:CallBackRemoveByPhoneNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallationId">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns the installation ID for this deployment</wsdl:documentation>
+      <wsdl:input message="tns:GetInstallationIdSoapIn" />
+      <wsdl:output message="tns:GetInstallationIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBack">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will generate a call back on the system using the internal call back engine</wsdl:documentation>
+      <wsdl:input message="tns:CallBackSoapIn" />
+      <wsdl:output message="tns:CallBackSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAACCTimeZones">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will gather the timezones configured on the system</wsdl:documentation>
+      <wsdl:input message="tns:GetListOfAACCTimeZonesSoapIn" />
+      <wsdl:output message="tns:GetListOfAACCTimeZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSkillsetID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method will gather the skillset id for a determined skillset name</wsdl:documentation>
+      <wsdl:input message="tns:GetSkillsetIDSoapIn" />
+      <wsdl:output message="tns:GetSkillsetIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomPercentage">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method returns a random number between 0 and 99</wsdl:documentation>
+      <wsdl:input message="tns:GenerateRandomPercentageSoapIn" />
+      <wsdl:output message="tns:GenerateRandomPercentageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAACCServerTimeDifference">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method finds the time difference from the AACC to the web server</wsdl:documentation>
+      <wsdl:input message="tns:GetAACCServerTimeDifferenceSoapIn" />
+      <wsdl:output message="tns:GetAACCServerTimeDifferenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This method provides the current Call-Back Request configuration</wsdl:documentation>
+      <wsdl:input message="tns:GetConfigurationSoapIn" />
+      <wsdl:output message="tns:GetConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutboundResults">
+      <wsdl:input message="tns:GetOutboundResultsSoapIn" />
+      <wsdl:output message="tns:GetOutboundResultsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsageStatistics">
+      <wsdl:input message="tns:GetUsageStatisticsSoapIn" />
+      <wsdl:output message="tns:GetUsageStatisticsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearStatistics">
+      <wsdl:input message="tns:ClearStatisticsSoapIn" />
+      <wsdl:output message="tns:ClearStatisticsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundNow">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Request a callback at this moment using the Outbound Campaign for a prefered agent within the outbound engine</wsdl:documentation>
+      <wsdl:input message="tns:CallBackOutboundNowSoapIn" />
+      <wsdl:output message="tns:CallBackOutboundNowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Counts the call-backs on the system which meet specific criteria within the outbound engine</wsdl:documentation>
+      <wsdl:input message="tns:CallBackOutboundCountSoapIn" />
+      <wsdl:output message="tns:CallBackOutboundCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundScheduledCount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Counts the call-backs on the system which meet specific criteria within the outbound engine</wsdl:documentation>
+      <wsdl:input message="tns:CallBackOutboundScheduledCountSoapIn" />
+      <wsdl:output message="tns:CallBackOutboundScheduledCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundScheduledList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lists the call backs on the system which meet specific criteria within the outbound engine</wsdl:documentation>
+      <wsdl:input message="tns:CallBackOutboundScheduledListSoapIn" />
+      <wsdl:output message="tns:CallBackOutboundScheduledListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Lists the call backs on the system which meet specific criteria within the outbound engine</wsdl:documentation>
+      <wsdl:input message="tns:CallBackOutboundListSoapIn" />
+      <wsdl:output message="tns:CallBackOutboundListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundRemove">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Closes a call back request from the outbound campaign within the outbound engine</wsdl:documentation>
+      <wsdl:input message="tns:CallBackOutboundRemoveSoapIn" />
+      <wsdl:output message="tns:CallBackOutboundRemoveSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CallBackRequestSoap" type="tns:CallBackRequestSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CallBackCount">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackListByPhoneNumber">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackListByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackList">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackRemoveById">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackRemoveById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackRemoveByPhoneNumber">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackRemoveByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallationId">
+      <soap:operation soapAction="http://APS.Avaya.com/GetInstallationId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBack">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBack" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAACCTimeZones">
+      <soap:operation soapAction="http://APS.Avaya.com/GetListOfAACCTimeZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSkillsetID">
+      <soap:operation soapAction="http://APS.Avaya.com/GetSkillsetID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomPercentage">
+      <soap:operation soapAction="http://APS.Avaya.com/GenerateRandomPercentage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAACCServerTimeDifference">
+      <soap:operation soapAction="http://APS.Avaya.com/GetAACCServerTimeDifference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <soap:operation soapAction="http://APS.Avaya.com/GetConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutboundResults">
+      <soap:operation soapAction="http://APS.Avaya.com/GetOutboundResults" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsageStatistics">
+      <soap:operation soapAction="http://APS.Avaya.com/GetUsageStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearStatistics">
+      <soap:operation soapAction="http://APS.Avaya.com/ClearStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundNow">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackOutboundNow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundCount">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackOutboundCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundScheduledCount">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackOutboundScheduledCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundScheduledList">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackOutboundScheduledList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundList">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackOutboundList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundRemove">
+      <soap:operation soapAction="http://APS.Avaya.com/CallBackOutboundRemove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CallBackRequestSoap12" type="tns:CallBackRequestSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CallBackCount">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackListByPhoneNumber">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackListByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackList">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackRemoveById">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackRemoveById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackRemoveByPhoneNumber">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackRemoveByPhoneNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallationId">
+      <soap12:operation soapAction="http://APS.Avaya.com/GetInstallationId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBack">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBack" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAACCTimeZones">
+      <soap12:operation soapAction="http://APS.Avaya.com/GetListOfAACCTimeZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSkillsetID">
+      <soap12:operation soapAction="http://APS.Avaya.com/GetSkillsetID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenerateRandomPercentage">
+      <soap12:operation soapAction="http://APS.Avaya.com/GenerateRandomPercentage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAACCServerTimeDifference">
+      <soap12:operation soapAction="http://APS.Avaya.com/GetAACCServerTimeDifference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConfiguration">
+      <soap12:operation soapAction="http://APS.Avaya.com/GetConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOutboundResults">
+      <soap12:operation soapAction="http://APS.Avaya.com/GetOutboundResults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsageStatistics">
+      <soap12:operation soapAction="http://APS.Avaya.com/GetUsageStatistics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearStatistics">
+      <soap12:operation soapAction="http://APS.Avaya.com/ClearStatistics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundNow">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackOutboundNow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundCount">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackOutboundCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundScheduledCount">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackOutboundScheduledCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundScheduledList">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackOutboundScheduledList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundList">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackOutboundList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CallBackOutboundRemove">
+      <soap12:operation soapAction="http://APS.Avaya.com/CallBackOutboundRemove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CallBackRequest">
+    <wsdl:port name="CallBackRequestSoap" binding="tns:CallBackRequestSoap">
+      <soap:address location="http://10.1.25.157/CallBack/CallBackRequest.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CallBackRequestSoap12" binding="tns:CallBackRequestSoap12">
+      <soap12:address location="http://10.1.25.157/CallBack/CallBackRequest.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

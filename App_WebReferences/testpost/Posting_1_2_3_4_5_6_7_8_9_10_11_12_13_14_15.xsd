@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:Q2="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:Account="http://AB/MW/ABSPARK/Common/Schemas/L2/Accounts" xmlns:Q1="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" xmlns:Party="http://AB/MW/ABSPARK/Common/Schemas/L2/Party" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" targetNamespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="Posting_1.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" />
+  <xsd:import schemaLocation="Posting_1_2.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Accounts" />
+  <xsd:import schemaLocation="Posting_1_2_3.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Party" />
+  <xsd:element ibmSchExtn:docRoot="true" name="CloseCustomerAccountRequest" type="Q2:CloseCustomerAccountRequestType" />
+  <xsd:complexType name="CloseCustomerAccountRequestType">
+    <xsd:sequence>
+      <xsd:element name="Header" type="Q1:RequestHeaderType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CloseCustomerAccountRq" type="Q2:CloseCustomerAccountRq" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element ibmSchExtn:docRoot="true" name="CloseCustomerAccountResponse" type="Q2:CloseCustomerAccountResponseType" />
+  <xsd:complexType name="CloseCustomerAccountResponseType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Header" type="Q1:ResponseHeaderType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CloseCustomerAccountRs" type="Q2:CloseCustomerAccountRs" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CloseCustomerAccountRq">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="AccountBranch" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AccountBasicNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AccountSuffix" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReceivingAccountBranch" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReceivingAccountBasicNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReceivingAccountSuffix" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DebitTransactionCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CreditTransactionCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AccountCurrency" type="xsd:string" />
+      <xsd:element minOccurs="0" name="StatementReq" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ConfirmationReq" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="CloseCustomerAccountRs">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="AccountBranch" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AccountBasicNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AccountSuffix" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReceivingAccountBranch" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReceivingAccountBasicNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ReceivingAccountSuffix" type="xsd:string" />
+      <xsd:element minOccurs="0" name="DebitTransactionCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="CreditTransactionCode" type="xsd:string" />
+      <xsd:element minOccurs="0" name="StatementRequired" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ConfirmationRequired" type="xsd:string" />
+      <xsd:element minOccurs="0" name="Charge" type="xsd:string" />
+      <xsd:element minOccurs="0" name="ChargeAmount" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="AccountBalance" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="NetCreditInterest" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="NetDebitInterest" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="ClearingToday" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="ClearingNextBusinessDay" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="ClearingBeyondNextBusiness" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="LocalClearing" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="ChargesTo-date" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="ReservedBalance" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="ClosingBalance" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="AccountCurrency" type="xsd:string" />
+      <xsd:element minOccurs="0" name="NoOfOverriddenMessages" type="xsd:int" />
+      <xsd:element minOccurs="0" name="NonAccrualInterest" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="NonAccrualPenalty" type="xsd:decimal" />
+      <xsd:element minOccurs="0" name="NoticeAccount" type="xsd:string" />
+      <xsd:element minOccurs="0" name="IncludeClosingInterest" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InterestFunding_Receiving1" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InterestFunding_Receiving2" type="xsd:string" />
+      <xsd:element minOccurs="0" name="InterestFunding_Receiving3" type="xsd:string" />
+      <xsd:element minOccurs="0" name="IntReceivingAccountBranch" type="xsd:string" />
+      <xsd:element minOccurs="0" name="IntReceivingAccountBasic" type="xsd:string" />
+      <xsd:element minOccurs="0" name="IntReceivingAccountSuffix" type="xsd:string" />
+      <xsd:element minOccurs="0" name="RecalculateCharge" type="xsd:string" />
+      <xsd:element minOccurs="0" name="TransactionCodeOfCharge" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

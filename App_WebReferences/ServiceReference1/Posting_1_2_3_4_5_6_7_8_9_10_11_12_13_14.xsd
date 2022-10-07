@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:Q1="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" xmlns:ns="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" targetNamespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="Posting_1.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" />
+  <xsd:element name="SMECreateCustomerRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:RequestHeaderType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="SMECreateCustomer" type="ns:SMECreateCustomerReqType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="SMECreateCustomerResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:ResponseHeaderType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="SMECreateCustomerRes" type="ns:SMECreateCustomerResType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="SMECreateCustomerReqType">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" maxOccurs="1" name="RequestType" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="InitiatingCountry" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="InitiatingBranch" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointAc" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="AccountNo" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="BlacklistTypeC" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CustomerLanguage" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CustomerType" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Existingcustomer" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CustomerID" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SecondaryCustomer" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Nationality" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoNationalNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CoRegestrationNum" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="IncorpCountry" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="RegestrationDate" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="FullName1Arabic" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="FullName2Arabic" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="RCountry" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="EnglishName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="MaidenName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Industry" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Companytype" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CountryofResidency" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ResidencyIndicator" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="LangofCorrespondence" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CApartmentNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CBuildingNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CStreetName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CNearestLandmark" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CDistrict" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CCityCd" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CCity" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CCountry" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CPOBox" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CZipCode" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="MAccountType" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="MAccountCurrency" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="MAccountSuffix" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="MNoCreditIntrest" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="AccountStateFreq" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="PEP1FullNameEN" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SecrecyWaiverForm" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="RefusingtoSubSMS" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="RMName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer1" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer1Rel" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer2" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer2Rel" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer3" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer3Rel" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer4" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer4Rel" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer5" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer5Rel" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer6" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointCustomer6Rel" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointLanguage" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointFullName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JointShortName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JPOA" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JElite" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="RMCode" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JLangofCorr" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JApartmentNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JHouseNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JStreetName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JNearestLandmark" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JDistrict" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JCityCd" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JCity" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JCountry" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JPOBox" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JZipCode" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JMAccountType" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JMAccountCurrency" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JMAccountSuffix" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JMNoCreditIntrest" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JMChequeBook" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JS1AccountType" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JS1AccountCurrency" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JS1AccountSuffix" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JS1NoCreditIntrest" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JS1ChequeBook" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JS2AccountType" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JS2AccountCurrency" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JS2AccountSuffix" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JS2NoCreditIntrest" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JS2ChequeBook" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JChequeBook" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JLanguage" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JNumberofpages" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JHalaArabi" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="J3rdPartyTransfer" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JDeliveryDetails" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JOtherBranch" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="JAccountStatfreq" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SigningInstructions" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="PermitNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="PermitIssuanceDate" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="PermitExpiryDate" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="RiskLevel" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="MinorFlag" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CustomerSegment" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="User" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="EqAddressNar1" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="EqAddressNar2" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="EqAddressNar3" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="EqAddressNar4" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="EqAddressNar5" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SwAddressNar1" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SwAddressNar2" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SwAddressNar3" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SwAddressNar4" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SwAddressNar5" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="EquationFullname" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="EquationShortname" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ExternalAccount" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SundryAnalysis" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="AnalysisCode" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="AccountIBAN" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="TandCVersion" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SNatARName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SNatENName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SNatNatDOB" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SNatDocType" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SNatDocNum" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SNatDocIssPlace" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SNatDocIssDate" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="SNatDocExpDate" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ClosedByCompliance" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="IncompetentFlag" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="FATCACountry" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="DQFlag" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="LegalForm" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ActivitySector" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="IssuanceDate" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ExpiryDate" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="Capital" type="xsd:integer" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="NumberOfStaff" type="xsd:integer" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="AnnualSale" type="xsd:integer" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="EMailaddress" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="MobileNumber" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="ApplicantName" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="TelNumber" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SMECreateCustomerResType">
+    <xsd:sequence>
+      <xsd:element name="AccountBranch" type="xsd:string" />
+      <xsd:element name="AccountBasic" type="xsd:string" />
+      <xsd:element name="CustomerMnemonic" type="xsd:string" />
+      <xsd:element name="ExternalAcc" type="xsd:string" />
+      <xsd:element name="IBAN" type="xsd:string" />
+      <xsd:element minOccurs="0" name="AccountSuffix" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

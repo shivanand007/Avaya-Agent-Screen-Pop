@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd1="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:xsd2="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/V01" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="CustomerPostingServices" targetNamespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <binding hasEncoding="false" imported="true" name="CustomerPostingServicesSOAP" originalBindingStyle="document" />
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="Posting.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6_7.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6_7_8.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6_7_8_9.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6_7_8_9_10.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6_7_8_9_10_11.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/V01" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6_7_8_9_10_11_12.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6_7_8_9_10_11_12_13.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6_7_8_9_10_11_12_13_14.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+      <xsd:import schemaLocation="Posting_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16.xsd" namespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CustomerAdditionalInformationMaintainRequest">
+    <wsdl:part name="parameters" element="xsd1:CustomerAdditionalInformationMaintainRequest" />
+  </wsdl:message>
+  <wsdl:message name="CustomerAdditionalInformationMaintainResponse">
+    <wsdl:part name="parameters" element="xsd1:CustomerAdditionalInformationMaintainResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerSegmentRequest">
+    <wsdl:part name="parameters" element="xsd1:UpdateCustomerSegmentRequest" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCustomerSegmentResponse">
+    <wsdl:part name="parameters" element="xsd1:UpdateCustomerSegmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerBasicDetailsMaintainRequest">
+    <wsdl:part name="parameters" element="xsd1:CustomerBasicDetailsMaintainRequest" />
+  </wsdl:message>
+  <wsdl:message name="CustomerBasicDetailsMaintainResponse">
+    <wsdl:part name="parameters" element="xsd1:CustomerBasicDetailsMaintainResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerOtherDetailsMaintainRequest">
+    <wsdl:part name="parameters" element="xsd1:CustomerOtherDetailsMaintainRequest" />
+  </wsdl:message>
+  <wsdl:message name="CustomerOtherDetailsMaintainResponse">
+    <wsdl:part name="parameters" element="xsd1:CustomerOtherDetailsMaintainResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaintainCISCustomerProductsRequest">
+    <wsdl:part name="parameters" element="xsd1:MaintainCISCustomerProductsRequest" />
+  </wsdl:message>
+  <wsdl:message name="MaintainCISCustomerProductsResponse">
+    <wsdl:part name="parameters" element="xsd1:MaintainCISCustomerProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCISCustomerProductsRequest">
+    <wsdl:part name="parameters" element="xsd1:DeleteCISCustomerProductsRequest" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCISCustomerProductsResponse">
+    <wsdl:part name="parameters" element="xsd1:DeleteCISCustomerProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostPreApprovedAuthorizationReferenceRequest">
+    <wsdl:part name="parameters" element="xsd1:PostPreApprovedAuthorizationReferenceRequest" />
+  </wsdl:message>
+  <wsdl:message name="PostPreApprovedAuthorizationReferenceResponse">
+    <wsdl:part name="parameters" element="xsd1:PostPreApprovedAuthorizationReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaintainCustomerDetailRequest">
+    <wsdl:part name="parameters" element="xsd1:MaintainCustomerDetailRequest" />
+  </wsdl:message>
+  <wsdl:message name="MaintainCustomerDetailResponse">
+    <wsdl:part name="parameters" element="xsd1:MaintainCustomerDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaintainTermsAndConditionRequest">
+    <wsdl:part name="parameters" element="xsd1:MaintainTermsAndConditionVersionRequest" />
+  </wsdl:message>
+  <wsdl:message name="MaintainTermsAndConditionResponse">
+    <wsdl:part name="parameters" element="xsd1:MaintainTermsAndConditionVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaintainCustomerDueDeligenceRequest">
+    <wsdl:part name="parameters" element="xsd1:MaintainCustomerDueDeligenceRequest" />
+  </wsdl:message>
+  <wsdl:message name="MaintainCustomerDueDeligenceResponse">
+    <wsdl:part name="parameters" element="xsd1:MaintainCustomerDueDeligenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="MaintainTermsAndConditionV01Request">
+    <wsdl:part name="parameters" element="xsd2:MaintainTermsAndConditionVersionRequest" />
+  </wsdl:message>
+  <wsdl:message name="MaintainTermsAndConditionV01Response">
+    <wsdl:part name="parameters" element="xsd2:MaintainTermsAndConditionVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerMaintainRequest">
+    <wsdl:part name="parameters" element="xsd1:CustomerMaintain" />
+  </wsdl:message>
+  <wsdl:message name="CustomerMaintainResponse">
+    <wsdl:part name="parameters" element="xsd1:CustomerMaintainRs" />
+  </wsdl:message>
+  <wsdl:message name="SMECreateCustomerRequest">
+    <wsdl:part name="parameters" element="xsd1:SMECreateCustomerRequest" />
+  </wsdl:message>
+  <wsdl:message name="SMECreateCustomerResponse">
+    <wsdl:part name="parameters" element="xsd1:SMECreateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseCustomerAccountRequest">
+    <wsdl:part name="parameters" element="xsd1:CloseCustomerAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="CloseCustomerAccountResponse">
+    <wsdl:part name="parameters" element="xsd1:CloseCustomerAccountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CustomerPostingServices">
+    <wsdl:operation name="CustomerAdditionalInformationMaintain">
+      <wsdl:input message="tns:CustomerAdditionalInformationMaintainRequest" />
+      <wsdl:output message="tns:CustomerAdditionalInformationMaintainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerSegment">
+      <wsdl:input message="tns:UpdateCustomerSegmentRequest" />
+      <wsdl:output message="tns:UpdateCustomerSegmentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerBasicDetailsMaintain">
+      <wsdl:input message="tns:CustomerBasicDetailsMaintainRequest" />
+      <wsdl:output message="tns:CustomerBasicDetailsMaintainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerOtherDetailsMaintain">
+      <wsdl:input message="tns:CustomerOtherDetailsMaintainRequest" />
+      <wsdl:output message="tns:CustomerOtherDetailsMaintainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MaintainCISCustomerProducts">
+      <wsdl:input message="tns:MaintainCISCustomerProductsRequest" />
+      <wsdl:output message="tns:MaintainCISCustomerProductsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCISCustomerProducts">
+      <wsdl:input message="tns:DeleteCISCustomerProductsRequest" />
+      <wsdl:output message="tns:DeleteCISCustomerProductsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="PostPreApprovedAuthorizationReference">
+      <wsdl:input message="tns:PostPreApprovedAuthorizationReferenceRequest" />
+      <wsdl:output message="tns:PostPreApprovedAuthorizationReferenceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MaintainCustomerDetail">
+      <wsdl:input message="tns:MaintainCustomerDetailRequest" />
+      <wsdl:output message="tns:MaintainCustomerDetailResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MaintainTermsAndCondition">
+      <wsdl:input message="tns:MaintainTermsAndConditionRequest" />
+      <wsdl:output message="tns:MaintainTermsAndConditionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MaintainCustomerDueDeligence">
+      <wsdl:input message="tns:MaintainCustomerDueDeligenceRequest" />
+      <wsdl:output message="tns:MaintainCustomerDueDeligenceResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="MaintainTermsAndConditionV01">
+      <wsdl:input message="tns:MaintainTermsAndConditionV01Request" />
+      <wsdl:output message="tns:MaintainTermsAndConditionV01Response" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerMaintain">
+      <wsdl:input message="tns:CustomerMaintainRequest" />
+      <wsdl:output message="tns:CustomerMaintainResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="SMECreateCustomer">
+      <wsdl:input message="tns:SMECreateCustomerRequest" />
+      <wsdl:output message="tns:SMECreateCustomerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseCustomerAccount">
+      <wsdl:input message="tns:CloseCustomerAccountRequest" />
+      <wsdl:output message="tns:CloseCustomerAccountResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerPostingServicesSOAP" type="tns:CustomerPostingServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CustomerAdditionalInformationMaintain">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/CustomerAdditionalInformationMaintain" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomerSegment">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/UpdateCustomerSegment" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerBasicDetailsMaintain">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/CustomerBasicDetailsMaintain" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerOtherDetailsMaintain">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/CustomerOtherDetailsMaintain" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaintainCISCustomerProducts">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/MaintainCISCustomerProducts" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCISCustomerProducts">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/DeleteCISCustomerProducts" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostPreApprovedAuthorizationReference">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/PostPreApprovedAuthorizationReference" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaintainCustomerDetail">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/MaintainCustomerDetail" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaintainTermsAndCondition">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/MaintainTermsAndCondition" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaintainCustomerDueDeligence">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/MaintainCustomerDueDeligence" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaintainTermsAndConditionV01">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/MaintainTermsAndConditionV01" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerMaintain">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/CustomerMaintain" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SMECreateCustomer">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/SMECreateCustomer" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseCustomerAccount">
+      <soap:operation soapAction="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/WSDL/CloseCustomerAccount" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CustomerPostingServices">
+    <wsdl:port name="CustomerPostingServicesSOAP" binding="tns:CustomerPostingServicesSOAP">
+      <soap:address location="https://10.1.13.39:9130/Customer/Posting" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

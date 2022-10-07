@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:Q1="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" xmlns:ns="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" targetNamespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="Posting_1.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" />
+  <xsd:element name="MaintainTermsAndConditionVersionRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:RequestHeaderType" />
+        <xsd:element minOccurs="1" maxOccurs="1" name="MaintainTermsAndConditionVersion" type="ns:MaintainTermsAndConditionVersionReqType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="MaintainTermsAndConditionVersionResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:ResponseHeaderType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:complexType name="MaintainTermsAndConditionVersionReqType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="CustomerIdentifier" type="xsd:string" />
+      <xsd:element name="CurrentTermsAndConditionsVersion" type="xsd:string" />
+      <xsd:element minOccurs="0" maxOccurs="unbounded" name="ProductCode" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

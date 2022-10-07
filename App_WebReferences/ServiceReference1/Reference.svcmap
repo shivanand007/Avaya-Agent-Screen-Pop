@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="5932d9ff-521e-4564-80c1-8dd3b223dec8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\its-shatha-al\Desktop\Customer_Maintain_wsdl&amp;Schema\Posting_1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Posting_1_2.xsd" MetadataType="Schema" ID="bef50065-168c-4b8a-8cf2-1e7b5a476f55" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2.xsd" />
+    <MetadataFile FileName="Posting_1_2_3.xsd" MetadataType="Schema" ID="b6a23a3f-feec-401c-a352-d3263f33408d" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6_7.xsd" MetadataType="Schema" ID="4d7ce8ab-889e-4228-b8cb-578320ff272a" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6_7.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4.xsd" MetadataType="Schema" ID="34a3be47-2b06-4037-8b31-aea5b86ba501" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4.xsd" />
+    <MetadataFile FileName="Posting_1.xsd" MetadataType="Schema" ID="5a959b86-1e08-4169-8a8e-66a5fe3072a2" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15.xsd" MetadataType="Schema" ID="558b73ac-0903-4974-9fe8-4b072ad74d8e" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6_7_8_9.xsd" MetadataType="Schema" ID="73b20b1d-7837-4753-bea9-08c40680c379" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6_7_8_9.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5.xsd" MetadataType="Schema" ID="9b0b7ef5-a786-45cc-8cb4-bd4cd94c0b9d" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6_7_8.xsd" MetadataType="Schema" ID="f63a2900-deac-4cbf-9416-086947464468" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6_7_8.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6_7_8_9_10_11.xsd" MetadataType="Schema" ID="47942064-6d83-45fd-b659-b05bc919855a" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6_7_8_9_10_11.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16.xsd" MetadataType="Schema" ID="f6b45f5f-9ebd-4548-b2ed-7c8c2df9990c" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6_7_8_9_10_11_12_13_14_15_16.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6_7_8_9_10_11_12.xsd" MetadataType="Schema" ID="74d438eb-2e8c-4406-bfb8-4fd01f76f92e" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6_7_8_9_10_11_12.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6.xsd" MetadataType="Schema" ID="1796af68-db5d-4418-b688-b56ef3fbc823" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6.xsd" />
+    <MetadataFile FileName="Posting.xsd" MetadataType="Schema" ID="bffab997-a000-4054-b58a-4d86e0c07f62" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting.xsd" />
+    <MetadataFile FileName="CustomerPostingServices.wsdl" MetadataType="Wsdl" ID="33ed8fd0-e71b-47af-a73c-c7ffce462bce" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1.wsdl" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6_7_8_9_10.xsd" MetadataType="Schema" ID="6e38d514-efbb-49ed-a0fd-d46332ff31de" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6_7_8_9_10.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6_7_8_9_10_11_12_13.xsd" MetadataType="Schema" ID="e7ef4735-b6b1-4867-9f83-5bae0fd13acc" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6_7_8_9_10_11_12_13.xsd" />
+    <MetadataFile FileName="Posting_1_2_3_4_5_6_7_8_9_10_11_12_13_14.xsd" MetadataType="Schema" ID="a83af3a7-d589-43f4-9388-2d34a687e11e" SourceId="1" SourceUrl="file:///C:/Users/its-shatha-al/Desktop/Customer_Maintain_wsdl&amp;Schema/Posting_1_2_3_4_5_6_7_8_9_10_11_12_13_14.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

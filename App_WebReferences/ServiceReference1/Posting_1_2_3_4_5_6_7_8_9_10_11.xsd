@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:Q1="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" xmlns:ns="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/V01" targetNamespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services/V01" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="Posting_1.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" />
+  <xsd:complexType name="MaintainTermsAndConditionVersionRequest">
+    <xsd:sequence>
+      <xsd:element name="AccountBranch" type="xsd:string" />
+      <xsd:element name="AccountBasic" type="xsd:string" />
+      <xsd:element name="CustomerMnemonic" type="xsd:string" />
+      <xsd:element name="CustomerSegment" type="xsd:string" />
+      <xsd:element name="TCVersion" type="xsd:string" />
+      <xsd:element name="SecrecyWaiverFlag" type="xsd:string" />
+      <xsd:element name="User" type="xsd:string" />
+      <xsd:element name="Date" type="xsd:string" />
+      <xsd:element name="Time" type="xsd:decimal" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="MaintainTermsAndConditionVersionRequest">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:RequestHeaderType" />
+        <xsd:element name="MaintainTermsAndConditionVersion" type="ns:MaintainTermsAndConditionVersionRequest" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="MaintainTermsAndConditionVersionResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Header" type="Q1:ResponseHeaderType" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

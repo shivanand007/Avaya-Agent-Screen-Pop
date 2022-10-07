@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:Q2="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:Account="http://AB/MW/ABSPARK/Common/Schemas/L2/Accounts" xmlns:Q1="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" xmlns:Party="http://AB/MW/ABSPARK/Common/Schemas/L2/Party" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" targetNamespace="http://AB/MW/ABSPARK/Channels/Customer/Posting/Services" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="Posting_1.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Common" />
+  <xsd:import schemaLocation="Posting_1_2.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Accounts" />
+  <xsd:import schemaLocation="Posting_1_2_3.xsd" namespace="http://AB/MW/ABSPARK/Common/Schemas/L2/Party" />
+  <xsd:element ibmSchExtn:docRoot="true" name="DeleteCISCustomerProductsRequest" type="Q2:DeleteCISCustomerProductsRequestType" />
+  <xsd:complexType name="DeleteCISCustomerProductsRequestType">
+    <xsd:sequence>
+      <xsd:element name="Header" type="Q1:RequestHeaderType" />
+      <xsd:element minOccurs="0" maxOccurs="1" name="CustomerIdentifier" type="Party:CustomerIdentifierType" />
+      <xsd:element name="ProductCde" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element ibmSchExtn:docRoot="true" name="DeleteCISCustomerProductsResponse" type="Q2:DeleteCISCustomerProductsResponseType" />
+  <xsd:complexType name="DeleteCISCustomerProductsResponseType">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" maxOccurs="1" name="Header" type="Q1:ResponseHeaderType" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
