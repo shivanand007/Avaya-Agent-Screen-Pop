@@ -4,76 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-
-    <title></title>
-    <style type="text/css">
-        .auto-style4 {
-            width: 100%;
-        }
-
-        .auto-style5 {
-            width: 200px;
-        }
-
-        .auto-style6 {
-            width: 200px;
-            height: 41px;
-        }
-
-
-        #Image1 {
-            margin-left: 80px;
-        }
-
-        #Label9, #Label11 {
-            text-align: center;
-        }
-
-
-        .but div {
-            visibility: hidden;
-        }
-
-
-        .but:hover div {
-            visibility: visible;
-        }
-
-        #Credit, #Approve, #Reject, #RejectSuspend {
-            margin-bottom: 4.7em;
-        }
-
-        
-        .auto-style7 {
-            width: 281px;
-            height: 77px;
-            margin-left: 30px;
-        }
-
-        
-        .auto-style8 {
-            width: 130px;
-        }
-        .auto-style9 {
-            width: 130px;
-            height: 41px;
-        }
-
-        #CBR:disabled{
-            width:155px;
-            height:37px;
-            margin-bottom: 10px;
-        }
-
-
-
-        
-    </style>
+    <title>Agent Screen Pop</title>
 </head>
 <body>
    <div style="background-color:#5090CC">
@@ -242,12 +177,67 @@
                     </td>
                 </tr>
             </table>
-        
-   
         <br />
-
-
     </form>
+    <style type="text/css">
+        .auto-style4 {
+            width: 100%;
+        }
+
+        .auto-style5 {
+            width: 200px;
+        }
+
+        .auto-style6 {
+            width: 200px;
+            height: 41px;
+        }
+
+
+        #Image1 {
+            margin-left: 80px;
+        }
+
+        #Label9, #Label11 {
+            text-align: center;
+        }
+
+
+        .but div {
+            visibility: hidden;
+        }
+
+
+        .but:hover div {
+            visibility: visible;
+        }
+
+        #Credit, #Approve, #Reject, #RejectSuspend {
+            margin-bottom: 4.7em;
+        }
+
+        
+        .auto-style7 {
+            width: 281px;
+            height: 77px;
+            margin-left: 30px;
+        }
+
+        
+        .auto-style8 {
+            width: 130px;
+        }
+        .auto-style9 {
+            width: 130px;
+            height: 41px;
+        }
+
+        #CBR:disabled{
+            width:155px;
+            height:37px;
+            margin-bottom: 10px;
+        }
+    </style>
     <script src="js/popper.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
