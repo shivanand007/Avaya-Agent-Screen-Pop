@@ -11,7 +11,7 @@ Avaya Agent Screen Pop is a custom solution built using .NET Framework for Avaya
 
 ## Prerequisites
 
-- Visual Studio (version X.X or higher)
+- Visual Studio (version 4.X or higher)
 - Avaya Aura Contact Center (AACC) system
 - .NET Framework (version 5 or higher)
 - IIS Server (version 6 or higher)
